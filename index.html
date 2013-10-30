@@ -8,33 +8,33 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <!-- stylesheet -->
   <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/bootstrap.css">
   <link rel="stylesheet" href="assets.css">
   
   <!-- Icons -->
   <link rel="shortcut icon" href="images/favicon.ico">
 </head>
-<body>
+<body ng-controller='ListCtrl'>
   <div id="sidebar-detail" class='hide'>
-      <nav id='sidebar-detail-list' ng-controller='SidebarListCtrl'>
-        <div>
-          <a class='close' href=''>Close</a>
-        </div>
-        <ul>
-          <li><a href="">Location</a></li>
-          <li><a href="">Location</a></li>
-          <li><a href="">Location</a></li>
-          <li><a href="">Location</a></li>
-          <li><a href="">Location</a></li>
-        </ul>
+    <nav id='sidebar-detail-list'>
+      <div>
+        <a class='close' href=''>Close</a>
+      </div>
+      <ul ng-show='listDest'>
+        <li ng-repeat='dest in destination'><a ng-click='close()' href="#/destination">{{dest}}</a></li>
+      </ul>
+      <ul ng-show='listBook'>
+        <a ng-click='close()' href="#/booking">Booking</a>
+      </ul>
     </nav>
-    </div>
+  </div>
   <div id="contents" class='hwidth'>
     <nav>
-      <ul>
-        <li><a class='menu' href="">Destination</a></li>
-        <li><a class='menu' href="">Book</a></li>
+      <ul >
+        <li><a class='menu' href="" ng-click='listDest = !listDest'>Destination</a></li>
+        <li><a class='menu' href="" ng-click='listBook = !listBook'>Book</a></li>
         <li id='logo'>
-          <a href="">Logo</a>
+          <a href="/">Logo</a>
           <a href=''>More</a>
         </li>
       </ul>
@@ -58,16 +58,16 @@
   <script type="text/javascript">
     $("#contents ul li a.menu").click(function () {
           $("#sidebar-detail").toggleClass("hide");
-          $("#contents").toggleClass("hwidth");
+          // $("#contents").toggleClass("hwidth");
       });
   </script>
   <script type="text/javascript">
-      // window.onresize = function() {
+      window.onresize = function() {
 
-      //     var width = $(window).width(),
-      //         height = $(window).height();
-      //     if(width < height) {}
-      // }
+          var width = $(window).width(),
+              height = $(window).height();
+          console.log('widddd',width)
+      }
   </script>
   
 </body>

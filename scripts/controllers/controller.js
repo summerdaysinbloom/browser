@@ -1,15 +1,34 @@
 'use strict';
 
 angular.module('ngApp')
-  .controller('MainCtrl', function ($scope) {
-  	console.log('mainCtrl')
-  })
-  .controller('SidebarListCtrl', function($scope) {
+    .controller('MainCtrl', function ($scope) {
+    	
+    })
+    .controller('ListCtrl', function($scope) {
+    	$scope.destination = [
+            'Bangkok',
+            'Bintan',
+            'Phuket',
+            'Samui',
+            'Sanya'
+        ];
 
-  })
-  .controller('BookingCtrl', function($scope) {
+        $scope.close = function() {
+        	console.log('closing',$(window).width());
 
-  })
-  .controller('DestinationCtrl', function($scope) {
+        	$("#sidebar-detail").addClass("hide");
+            $("#contents").addClass("hwidth");
 
-  });
+            $scope.listBook = false;
+            $scope.listDest = false;
+        };
+
+        console.log('local', $scope);
+    })
+    .controller('BookingCtrl', function($scope) {
+  
+    })
+    .controller('DestinationCtrl', function($scope) {
+  
+    });
+  
