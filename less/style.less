@@ -16,21 +16,6 @@ li {
 	padding: 0;
 }
 
-#sidebar-detail {
-	margin-top: 0;
-	width: 230px; 
-	float: left;
-	height: 100%;
-	background:#eee; 
-	overflow:hidden;
-	transition: all 1s;
-	white-space:nowrap;
-  	ul li a {
-  	color: #000;
-  	display: block;
-  	text-decoration: none;
-  }
-}
 
 #sidebar-detail-list {
 	padding: 0;
@@ -123,14 +108,6 @@ li {
 	width: 100%;
 }
 
-.hide {
-	width:0 !important;
-	height: 0 !important;
-}
-
-.hwidth {
-	margin-left:0 !important;
-}
 
 .book_room_detail {
 	bottom: 40px;
@@ -231,15 +208,6 @@ li {
   }
 }
 
-@media only screen and (max-width: 1200px) {
-	.swipe-wrap > div img {
-    margin-left: -5%;
-    margin-top: -5%;
-    min-height: 110%;
-    min-width: 1000px;
-    width: 110%;
-  }
-}
 
 /* bootstrap customize */
 .page-header {
@@ -254,6 +222,9 @@ li {
 	.lead {
 		border-bottom: 1px solid #eee;
 	}
+	&:last-child {
+		border-bottom: none;
+	}
 }
 
 .bg-img {
@@ -262,4 +233,58 @@ li {
   z-index: 0;
 
   min-width: 1200px;
+}
+
+.related {
+	border-top: 1px solid #eee;
+	bottom: 0;
+	padding: 60px;
+	position: relative;
+	text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+	.swipe-wrap > div img {
+    margin-left: -5%;
+    margin-top: -5%;
+    min-height: 110%;
+    min-width: 1000px;
+    width: 110%;
+  }
+  .related { 
+    margin-bottom: 80px;
+  }
+}
+
+
+#sidebar-detail {
+	margin-top: 0;
+	width: 230px; 
+	float: left;
+	height: 100%;
+	background:#eee; 
+	overflow:hidden;
+	transition: all 1s;
+	white-space:nowrap;
+	-webkit-box-sizing: none;
+	-moz-box-sizing: none;
+	box-sizing: none;
+  	ul li a {
+  	color: #000;
+  	display: block;
+  	text-decoration: none;
+  }
+}
+
+.hide {
+	height: 0 !important;
+	width:0 !important;
+}
+
+.hwidth {
+	margin-left:0 !important;
+}
+
+.row {
+	border: none;
 }
