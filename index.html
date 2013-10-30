@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="ngApp">
+<head>
+  <title>Angular boilerplate</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <!-- stylesheet -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="assets.css">
+  
+  <!-- Icons -->
+  <link rel="shortcut icon" href="images/favicon.ico">
+</head>
+<body>
+  <div id="sidebar-detail" class='hide'>
+      <nav id='sidebar-detail-list' ng-controller='SidebarListCtrl'>
+        <div>
+          <a class='close' href=''>Close</a>
+        </div>
+        <ul>
+          <li><a href="">Location</a></li>
+          <li><a href="">Location</a></li>
+          <li><a href="">Location</a></li>
+          <li><a href="">Location</a></li>
+          <li><a href="">Location</a></li>
+        </ul>
+    </nav>
+    </div>
+  <div id="contents" class='hwidth'>
+    <nav>
+      <ul>
+        <li><a class='menu' href="">Destination</a></li>
+        <li><a class='menu' href="">Book</a></li>
+        <li id='logo'>
+          <a href="">Logo</a>
+          <a href=''>More</a>
+        </li>
+      </ul>
+    </nav>
+    <div id='contents-wrapper' ng-view="">
+    </div>
+  </div>
+
+
+
+<!--     <div id="footer">
+      <div class="container">
+        <p class="text-muted credit">Boilerplate.footer</p>
+      </div>
+    </div> -->
+
+  <!-- scripts -->
+  <script src="bower_components/jquery/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/swipe/swipe.js"></script>
+
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+
+  <!-- application -->
+  <script src="../scripts/app.js"></script>
+  <script src="../scripts/controllers/controller.js"></script>
+  <!-- custom -->
+  <script type="text/javascript">
+    $("#contents ul li a.menu").click(function () {
+          $("#sidebar-detail").toggleClass("hide");
+          $("#contents").toggleClass("hwidth");
+      });
+  </script>
+  <script type="text/javascript">
+      // window.onresize = function() {
+
+      //     var width = $(window).width(),
+      //         height = $(window).height();
+      //     if(width < height) {}
+      // }
+  </script>
+  
+</body>
+</html>

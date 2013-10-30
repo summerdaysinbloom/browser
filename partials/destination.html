@@ -1,0 +1,46 @@
+<div class='content' ng-controller='DestinationCtrl'>
+  <div id="position">
+    <ul>
+      <li class=" " onclick='mySwipe.slide(0, 2000)'></li>
+      <li class="on" onclick='mySwipe.slide(1, 2000)'></li>
+      <li class=" " onclick='mySwipe.slide(2, 2000)'></li>
+      <li class=" " onclick='mySwipe.slide(3, 2000)'></li>
+    </ul>
+  </div>
+  <div id='slider' class='swipe'>
+    <div class='swipe-wrap'>
+      <div><img src='/../images/v_spa6.png'></div>
+      <div><img src='/../images/v_spa7.png'></div>
+      <div><img src='/../images/v_spa4.png'></div>
+      <div><img src='/../images/v_spa5.png'></div>
+    </div>
+    <div class='slide_nav'>
+      <a class='slide_prev' onclick='mySwipe.prev()'>prev</a> 
+      <a class='slide_next' onclick='mySwipe.next()'>next</a>
+    </div>
+  </div>
+</div>
+<div class='content'>Destination2</div>
+<div class='content'>Destination3</div>
+<div class='content'>Destination4</div>
+<script type="text/javascript">
+    window.mySwipe = new Swipe(document.getElementById('slider'), {
+        startSlide: 1,
+        speed: 2000,
+        auto: 2000,
+        continuous: true,
+        disableScroll: false,
+        stopPropagation: false,
+        continuous: true,
+        callback: function(pos) {
+            var i = bullets.length;
+            while (i--) {
+              bullets[i].className = ' ';
+            }
+            bullets[pos].className = 'on';
+    
+        },
+        transitionEnd: function(index, elem) {}
+    });
+    var bullets = document.getElementById('position').getElementsByTagName('li');
+</script>
