@@ -1,20 +1,40 @@
-<div class='content' ng-controller='BookingCtrl'>
-
-  <div id='book_hotel' class='swipe'>
-    <div class='swipe-wrap'>
-      <div><img src='./images/v_spa6.png'></div>
-      <div><img src='./images/v_spa7.png'></div>
-      <div><img src='./images/v_spa5.png'></div>
-      <div><img src='./images/v_spa6.png'></div>
-      <div><img src='./images/v_spa7.png'></div>
-      <div><img src='./images/v_spa5.png'></div>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+    <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="item active">
+      <img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:First slide" alt="first slide" src="images/default.png">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Slide show #1</h1>
+        </div>
+      </div>
     </div>
-    <div class='slide_nav'>
-      <a class='slide_prev' onclick='swipeHotel.prev()'>prev</a> 
-      <a class='slide_next' onclick='swipeHotel.next()'>next</a>
+    <div class="item">
+      <img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Second slide" alt="second slide" src="images/default.png">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Slide show #2</h1>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide" src="images/default.png">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Slide show #3</h1>
+        </div>
+      </div>
     </div>
   </div>
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 </div>
+
 <div>
   <div class='container'>
     <div class="page-header">
@@ -57,39 +77,6 @@
           <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
         </div><!-- /.col-lg-4 -->
       </div>
-    </div>
-  </div>
-</div>
-<div class='content'>
-  <div id='book_room' class='swipe'>
-    <div class='swipe-wrap'>
-      <div><img src='./images/room1.png'></div>
-      <div><img src='./images/room2.png'></div>
-      <div><img src='./images/room3.png'></div>
-      <div><img src='./images/room1.png'></div>
-      <div><img src='./images/room2.png'></div>
-      <div><img src='./images/room3.png'></div>
-    </div>
-    <div class='slide_nav'>
-      <a class='slide_prev' onclick='swipeRoom.prev()'>prev</a> 
-      <a class='slide_next' onclick='swipeRoom.next()'>next</a>
-    </div>
-  </div>
-  <div class='book_room_detail'>
-    <div class='container'>
-      <div class='row'>
-        <div class="col-lg-4">
-          <h2>Room A</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor     mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna     mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#">View details »</a></p>
-        </div>
-        <div class="col-lg-4"></div>
-        <div class="col-lg-4">
-          <h2>Offer</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor     mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna     mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#">View details »</a></p>
-        </div>
-  </div>
     </div>
   </div>
 </div>
@@ -168,25 +155,9 @@
     </div>
   </div>
 </div>
-<script type="text/javascript">
-    window.swipeHotel = new Swipe(document.getElementById('book_hotel'), {
-        startSlide: 1,
-        speed: 2000,
-        auto: 2000,
-        continuous: true,
-        disableScroll: false,
-        stopPropagation: false,
-        continuous: true,
-        transitionEnd: function(index, elem) {}
-    });
-    window.swipeRoom = new Swipe(document.getElementById('book_room'), {
-        startSlide: 1,
-        speed: 2000,
-        auto: 2000,
-        continuous: true,
-        disableScroll: false,
-        stopPropagation: false,
-        continuous: true,
-        transitionEnd: function(index, elem) {}
-    });
+
+<script>
+$(document).ready(function() {        
+    $('.carousel').carousel()
+});
 </script>
